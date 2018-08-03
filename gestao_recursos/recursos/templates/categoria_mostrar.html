@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Categoria Recurso {% endblock %}
+
+{% block main %}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-4 px-1">
+        <div class="row pb-3">
+            <div class="col-9">
+                <h3>Categoria Recurso</h3>
+            </div>
+            <div class="col-3 text-right p-0">
+                <a href="{% url 'listar_categoria' %}" class="btn btn-primary" alt="Voltar" title="Voltar"><ion-icon name="arrow-back"></ion-icon></a>
+                <a href="{% url 'alterar_categoria' categoria.idCategoria %}" class="btn btn-primary" alt="Alterar" title="Alterar Categoria"><ion-icon name="create"></ion-icon></a>
+                <a href="{% url 'cadastrar_categoria' %}" class="btn btn-primary" alt="Nova Categoria" title="Nova Categoria"><ion-icon name="add"></ion-icon></a>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td scope="row"><b>Nome</b></td>
+                        <td scope="row">{{ categoria.nome }}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row"><b>Descrição</b></td>
+                        <td scope="row">{{ categoria.descricao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+{% endblock %}

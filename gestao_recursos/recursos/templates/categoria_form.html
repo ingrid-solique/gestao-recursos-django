@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Categoria {% endblock %}
+
+{% block main %}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-4 px-1">
+        <h3>Nova categoria</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="{% url 'listar_categoria' %}" class="btn btn-danger">Cancelar</a>
+        </form>
+    </main>
+{% endblock %}
